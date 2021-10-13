@@ -33,12 +33,28 @@ void	check_input(int argc, char **argv, t_data *data)
 {
 	if (argc < 2)
 		ft_error("Minimum params must be: ./fractol <fractal name>\n");
+}
+
+void	init_data(char **argv, t_data *data)
+{
+	t_data data;
+
+	data->mlx = mlx_init();
+	data->win = mlx_new_window(data->mlx, WIDTH, HEIGHT, data->fractal_name);
+	data->img.img = mlx_new_image(data->mlx, WIDTH, HEIGHT);
+	data->img.addr = mlx_get_data_addr(data->img.img, &data->img.bpp, 
+		&data->img.line_length, &data->img.endian);
 	if (ft_strncmp(argv[1], "Mandelbrot", 10) == 0)
 		data->fractal_name = "Mandelbrot";
 	else if (ft_strncmp(argv[1], "Julia", 5) == 0)
 		data->fractal_name = "Julia";
 	else
 		ft_error("Allowed fractal sets: Mandelbrot; Julia;\n");
+}
+
+void	draw_mandelbrot(t_data *data)
+{
+	
 }
 
 void	do_fractal(t_data *data)
@@ -55,11 +71,7 @@ int	main(int argc, char **argv)
 	t_data	data;
 
 	check_input(argc, argv, &data);
-	data.mlx = mlx_init();
-	data.win = mlx_new_window(data.mlx, WIDTH, HEIGHT, data.fractal_name);
-	data.img->img = mlx_new_image(data.mlx, WIDTH, HEIGHT);
-	data.img->addr = mlx_get_data_addr(data.img->img, &data.img->bpp, 
-		&data.img->line_length, &data.img->endian);
+	init_data(argv, &data);
 	do_fractal(&data);
 	mlx_loop(data.mlx);
 	ft_error("Something went wrong :(\n");

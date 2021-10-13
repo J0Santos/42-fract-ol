@@ -46,11 +46,11 @@ typedef struct	s_data
 {
 	void	*mlx;
 	void	*win;
-	t_img 	*img;
+	t_img 	img;
 	char	*fractal_name
 }	t_data;
 
-void	fractol();
+
 
 #endif
 
