@@ -6,7 +6,7 @@
 /*   By: josantos <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/29 18:14:00 by josantos          #+#    #+#             */
-/*   Updated: 2021/10/20 00:05:10 by josantos         ###   ########.fr       */
+/*   Updated: 2021/10/20 00:31:25 by josantos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,6 +89,7 @@ typedef struct	s_fractal
 
 typedef struct	s_control_room
 {
+
 	void		*mlx;
 	void		*win;
 	t_img 		*img;
@@ -110,6 +111,7 @@ int			get_color(int iteration, int precision, int color);
 void		render_fractal(t_control *control);
 void		pixels_to_image(t_control *control);
 t_pxl	julia_set(int x, int y, t_view *view);
+
 
 #endif
 
