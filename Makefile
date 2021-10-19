@@ -1,5 +1,12 @@
 NAME = fractol
-SRCS = fractol.c
+SRCS = srcs/fractal.c \
+	   srcs/main.c \
+	   srcs/utils.c \
+	   srcs/control.c \
+	   srcs/mandelbrot.c \
+	   srcs/view.c \
+	   srcs/color.c \
+	   srcs/julia.c
 OBJS = $(SRCS:.c=.o)
 FLAGS = -W -W -W -g
 INCS = -Iincludes -Llibft -lft -Lmlx -lmlx
