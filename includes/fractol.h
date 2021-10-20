@@ -6,7 +6,7 @@
 /*   By: josantos <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/29 18:14:00 by josantos          #+#    #+#             */
-/*   Updated: 2021/10/20 19:08:22 by josantos         ###   ########.fr       */
+/*   Updated: 2021/10/20 19:23:16 by josantos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,7 +79,7 @@ typedef struct s_view
 	int			color;
 }	t_view;
 
-typede	ft_pxl	(*t_fn_fractal)(int x, int y, t_view *view);
+typedef t_pxl	(*t_fn_fractal)(int x, int y, t_view *view);
 
 typedef struct s_fractal
 {
