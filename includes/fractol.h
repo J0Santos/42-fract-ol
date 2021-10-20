@@ -6,7 +6,7 @@
 /*   By: josantos <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/29 18:14:00 by josantos          #+#    #+#             */
-/*   Updated: 2021/10/20 18:32:20 by josantos         ###   ########.fr       */
+/*   Updated: 2021/10/20 18:43:29 by josantos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 # define ZOOM_OUT  4
 # define PLUS_SIGN 69
 # define MINUS_SIGN 78
+# define KEY_C 8
 
 # ifndef WIDTH
 #  define WIDTH 1920
