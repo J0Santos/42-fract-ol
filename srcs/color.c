@@ -6,7 +6,7 @@
 /*   By: josantos <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/19 20:15:20 by josantos          #+#    #+#             */
-/*   Updated: 2021/10/20 18:57:11 by josantos         ###   ########.fr       */
+/*   Updated: 2021/10/20 19:53:08 by josantos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,6 @@ int	get_color(int iteration, int precision, int color)
 	else if (color == B_W)
 		return (create_trgb(0, iteration * 5.5, iteration * 5.5,
 				iteration * 5.5));
-	return (create_trgb(0, iteration * 5.5, iteration * 20.5,
-			10.5 * iteration));
+	return (create_trgb(0, iteration * 5.5, iteration * 10.5,
+			15.5 * iteration));
 }

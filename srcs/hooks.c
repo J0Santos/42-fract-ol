@@ -6,7 +6,7 @@
 /*   By: josantos <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/20 17:15:14 by josantos          #+#    #+#             */
-/*   Updated: 2021/10/20 19:22:46 by josantos         ###   ########.fr       */
+/*   Updated: 2021/10/20 19:54:45 by josantos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,6 @@ int	key_hook(int keycode, t_control *control)
 	int	i;
 
 	i = control->view.color;
-	printf("keycode: %d\n", keycode);
 	if (keycode == ESC_KEY)
 		exit_program(control);
 	else if (keycode == PLUS_SIGN)
@@ -30,7 +29,6 @@ int	key_hook(int keycode, t_control *control)
 			control->view.color = 1;
 		else
 			control->view.color += 1;
-		printf("%d", i);
 	}
 	render_fractal(control);
 	return (keycode);

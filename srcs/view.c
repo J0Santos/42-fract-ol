@@ -6,7 +6,7 @@
 /*   By: josantos <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/19 22:44:48 by josantos          #+#    #+#             */
-/*   Updated: 2021/10/20 17:34:48 by josantos         ###   ########.fr       */
+/*   Updated: 2021/10/20 19:51:30 by josantos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,6 @@ void	init_view(t_control *control, char **argv)
 	control->width = WIDTH;
 	control->heigth = HEIGTH;
 	control->view.mouse = (t_complex){-0.70176, -0.3842};
-	if (*argv[2])
+	if (argv[2])
 		control->view.color = ft_atoi(argv[2]);
 }
