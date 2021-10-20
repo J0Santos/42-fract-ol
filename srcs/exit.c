@@ -1,29 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   exit.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: josantos <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/19 14:28:18 by josantos          #+#    #+#             */
-/*   Updated: 2021/10/20 18:05:15 by josantos         ###   ########.fr       */
+/*   Created: 2021/10/20 17:21:36 by josantos          #+#    #+#             */
+/*   Updated: 2021/10/20 18:13:15 by josantos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fractol.h"
 
-int	main(int argc, char **argv)
+void	exit_program(t_control *control)
 {
-	t_fractal	*fractal;
-	t_control	*control;
-
-	if (argc < 2)
-		ft_error("Minimum params must be:\n\t./fractol <fractal_name> [x][y]\n");
-	fractal = init_fractal(argv[1]);
-	control = init_control_room(argv[1]);
-	control->fractal = fractal;
-	init_view(control, argv);
-	render_fractal(control);
-	init_loop(control);
-	return (0);
+	mlx_destroy_window(control->mlx, control->win);
+	free(control->fractal);
+	free(control->pixels);
+	free(control);
+	printf("Success!!\n");
+	exit(EXIT_SUCCESS);
 }

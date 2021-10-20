@@ -126,11 +126,10 @@ ${NAME1}: ${OBJS}
 	${AT} ${CP_CMD} ${BLOCK}
 	${AT} ${CC} ${CFLAGS} ${OFLAGS} ${INCS}  ${OBJS} ${MLX_FLAGS} ${LIB_ROOT}libft/libft.a -o $@ ${BLOCK}
 	${AT}printf "${_SUCCESS} ${@F} created.\n\n\n" ${BLOCK}
-	${AT}printf "${GREEN}HOW TO COMPILE:\n" ${BLOCK}
-	${AT}printf "\t[./fractol <fractal> [x] [y] [-p <precision>] [-c <color>]\n" ${BLOCK}
-	${AT}printf "\nCOLOR OPTIONS:\n\t1: black and white\n\t2: red\n\t3: green\n\t4: blue\n\t5: mix" ${BLOCK}
-	${AT}printf "\n\t If not given any color, default is any other number.\n" ${BLOCK}
-	${AT}printf "\nPRECISION OPTIONS:\n\t If not given any precision, default is at 85.\n${RESET}" ${BLOCK}
+	${AT}printf "${GREEN}Ready To Compile:\n" ${BLOCK}
+	${AT}printf "\t[./fractol <fractal> [<color number>]\n" ${BLOCK}
+	${AT}printf "\nCOLOR OPTION NUMBERS:\n\t1: RED\n\t2: GREEN\n\t3: BLUE\n\t4: B_W" ${BLOCK}
+	${AT}printf "\n\tIf not given any color, a special one will be provided.\n" ${BLOCK}
 
 # **************************************************************************** #
 # Clean Targets

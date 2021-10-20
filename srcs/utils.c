@@ -6,11 +6,19 @@
 /*   By: josantos <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/19 14:29:22 by josantos          #+#    #+#             */
-/*   Updated: 2021/10/19 23:52:42 by josantos         ###   ########.fr       */
+/*   Updated: 2021/10/20 18:30:14 by josantos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fractol.h"
+
+void	init_loop(t_control *control)
+{
+	mlx_key_hook(control->win, key_hook, control);
+	mlx_mouse_hook(control->win, mouse_hook, control);
+	mlx_hook(control->win, 17, 1L << 17, red_cross, control);
+	mlx_loop(control->mlx);
+}
 
 void    my_mlx_pixel_put(t_img *img, int x, int y, int color)
 {
