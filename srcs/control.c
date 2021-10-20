@@ -6,7 +6,7 @@
 /*   By: josantos <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/19 16:43:55 by josantos          #+#    #+#             */
-/*   Updated: 2021/10/20 16:16:07 by josantos         ###   ########.fr       */
+/*   Updated: 2021/10/20 18:57:56 by josantos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,8 +27,8 @@ t_control	*init_control_room(char *str)
 	if (!img)
 		ft_error("Error allocating img\n");
 	img->img = mlx_new_image(control->mlx, WIDTH, HEIGTH);
-	img->addr = mlx_get_data_addr(img->img, &img->bpp, &img->line_length, 
-		&img->endian);
+	img->addr = mlx_get_data_addr(img->img, &img->bpp, &img->line_length,
+			&img->endian);
 	control->img = img;
 	return (control);
 }

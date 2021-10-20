@@ -6,7 +6,7 @@
 /*   By: josantos <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/29 18:14:00 by josantos          #+#    #+#             */
-/*   Updated: 2021/10/20 18:43:29 by josantos         ###   ########.fr       */
+/*   Updated: 2021/10/20 19:08:22 by josantos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@
 # include "../libft/libft.h"
 # include "math.h"
 
-typedef struct	s_img
+typedef struct s_img
 {
 	void	*img;
 	char	*addr;
@@ -55,20 +55,19 @@ typedef struct	s_img
 	int		endian;
 }	t_img;
 
-
-typedef struct	s_complex
+typedef struct s_complex
 {
 	float	re;
 	float	im;
 }	t_complex;
 
-typedef struct	s_pixel
+typedef struct s_pixel
 {
 	int			iter;
 	t_complex	pixel;
 }	t_pxl;
 
-typedef struct	s_view
+typedef struct s_view
 {
 	float		x_min;
 	float		x_max;
@@ -80,20 +79,19 @@ typedef struct	s_view
 	int			color;
 }	t_view;
 
-typedef	t_pxl	(* t_fn_fractal)(int x, int y, t_view *view);
+typede	ft_pxl	(*t_fn_fractal)(int x, int y, t_view *view);
 
-typedef struct	s_fractal
+typedef struct s_fractal
 {
 	char			*fractal;
 	t_fn_fractal	fn_fractal;
 }	t_fractal;
 
-typedef struct	s_control_room
+typedef struct s_control_room
 {
-
 	void		*mlx;
 	void		*win;
-	t_img 		*img;
+	t_img		*img;
 	t_fractal	*fractal;
 	t_view		view;
 	t_pxl		*pixels;
@@ -111,14 +109,11 @@ void		init_view(t_control *control, char **argv);
 int			get_color(int iteration, int precision, int color);
 void		render_fractal(t_control *control);
 void		pixels_to_image(t_control *control);
-t_pxl	julia_set(int x, int y, t_view *view);
+t_pxl		julia_set(int x, int y, t_view *view);
 int			key_hook(int key_code, t_control *control);
 int			mouse_hook(int mousecode, int x, int y, t_control *control);
 void		exit_program(t_control *control);
 void		init_loop(t_control *control);
 int			red_cross(t_control *control);
 
-
 #endif
-
-

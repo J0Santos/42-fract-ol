@@ -6,7 +6,7 @@
 /*   By: josantos <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/20 17:15:14 by josantos          #+#    #+#             */
-/*   Updated: 2021/10/20 18:53:17 by josantos         ###   ########.fr       */
+/*   Updated: 2021/10/20 19:01:51 by josantos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	key_hook(int keycode, t_control *control)
 {
-	int i;
+	int	i;
 
 	i = control->view.color;
 	printf("keycode: %d\n", keycode);
@@ -33,10 +33,10 @@ int	key_hook(int keycode, t_control *control)
 		printf("%d", i);
 	}
 	render_fractal(control);
-	return(keycode);
+	return (keycode);
 }
 
-int	mouse_hook(int	mousecode, int x, int y, t_control *control)
+int	mouse_hook(int mousecode, int x, int y, t_control *control)
 {
 	(void)y;
 	(void)x;
@@ -45,7 +45,7 @@ int	mouse_hook(int	mousecode, int x, int y, t_control *control)
 	else if (mousecode == ZOOM_OUT)
 		control->view.zoom /= 1.05;
 	render_fractal(control);
-	return(mousecode);
+	return (mousecode);
 }
 
 int	red_cross(t_control *control)
