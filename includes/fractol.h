@@ -6,7 +6,7 @@
 /*   By: josantos <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/29 18:14:00 by josantos          #+#    #+#             */
-/*   Updated: 2021/10/20 19:23:16 by josantos         ###   ########.fr       */
+/*   Updated: 2021/10/21 15:57:59 by josantos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -99,21 +99,21 @@ typedef struct s_control_room
 	int			heigth;
 }	t_control;
 
-void		my_mlx_pixel_put(t_img *img, int x, int y, int color);
-int			create_trgb(int t, int r, int g, int b);
 t_fractal	*init_fractal(char *str);
 t_control	*init_control_room(char *str);
-t_pxl		mandelbrot_set(int x, int y, t_view *view);
-t_complex	get_complex(int x, int y, t_view *view);
 void		init_view(t_control *control, char **argv);
-int			get_color(int iteration, int precision, int color);
 void		render_fractal(t_control *control);
-void		pixels_to_image(t_control *control);
+t_pxl		mandelbrot_set(int x, int y, t_view *view);
 t_pxl		julia_set(int x, int y, t_view *view);
+t_complex	get_complex(int x, int y, t_view *view);
+void		pixels_to_image(t_control *control);
+int			get_color(int iteration, int precision, int color);
+int			create_trgb(int t, int r, int g, int b);
+void		my_mlx_pixel_put(t_img *img, int x, int y, int color);
+void		init_loop(t_control *control);
 int			key_hook(int key_code, t_control *control);
 int			mouse_hook(int mousecode, int x, int y, t_control *control);
-void		exit_program(t_control *control);
-void		init_loop(t_control *control);
 int			red_cross(t_control *control);
+void		exit_program(t_control *control);
 
 #endif
